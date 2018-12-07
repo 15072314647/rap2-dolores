@@ -11,8 +11,8 @@ WORKDIR /home/rap2-dolores
 # 将代码拷贝至工作目录
 COPY . /home/rap2-dolores
 
-# 全局安装http-server服务器
-RUN npm install -g http-server
+# 安装nginx
+RUN apt-get update && apt-get install -y nginx
 
 # 全局安装node-sass(一定要带--unsafe-perm，否则会报错)
 RUN npm install --unsafe-perm -g node-sass
@@ -22,3 +22,7 @@ RUN npm install
 
 # 打包
 RUN npm run build
+
+EXPOSE 80 443
+
+CMD ["nginx","-g","daemon off;"]
