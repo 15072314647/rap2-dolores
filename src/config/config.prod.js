@@ -1,5 +1,5 @@
 module.exports = {
-  serve: 'http://rap2.fabric8.kang123.club/backend',
+  serve: 'http://rap2-delos.fabric8',
   keys: ['some secret hurr'],
   session: {
     key: 'koa:sess'
